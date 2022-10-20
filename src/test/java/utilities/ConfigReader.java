@@ -20,8 +20,6 @@ public class ConfigReader {
 
 
 
-
-
     public static String getProperty(String key) {
         /*
         Test methodundan yolladigimiz String key degerini alip properties classindan
