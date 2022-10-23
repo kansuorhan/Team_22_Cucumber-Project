@@ -1,0 +1,1 @@
+!<-- Dusundugum bazi seyler gerceklesirse(insallah bunu bir daha okumadan gerceklesir) kimyam bir nebze olsa kendine gelir-->
