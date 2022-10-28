@@ -2,6 +2,7 @@ package utilities;
 
 import com.github.javafaker.Faker;
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
@@ -9,6 +10,10 @@ import org.openqa.selenium.support.ui.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -220,6 +225,49 @@ public class ReusableMethods {
             JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
             executor.executeScript("arguments[0].click();", webElement);
         }
+    }
+    public static void fileNameWrittenExtensionEXCEL(String release,String expectedFileName) {
+        System.out.println(("searching for configuration files in folder " + release));
+        Path releaseFolder = Paths.get(release);
+        try(DirectoryStream<Path> stream = Files.newDirectoryStream(releaseFolder, "*.xlsx")) {
+
+            for (Path entry: stream){
+                if (entry.getFileName().toString().contains(expectedFileName)) {
+                    System.out.println(("working on file " + entry.getFileName()));
+                }
+            }
+        }
+        catch (IOException e){
+            System.out.println(("error while retrieving update configuration files " + e.getMessage()));
+        }
+    }
+
+    public static void fileNameWrittenExtensionCSV(String release,String expectedFileName) {
+        System.out.println(("searching for configuration files in folder " + release));
+        Path releaseFolder = Paths.get(release);
+        try(DirectoryStream<Path> stream = Files.newDirectoryStream(releaseFolder, "*.csv")) {
+
+            for (Path entry: stream){
+                if (entry.getFileName().toString().contains(expectedFileName)) {
+                    System.out.println(("working on file " + entry.getFileName()));
+                }
+            }
+        }
+        catch (IOException e){
+            System.out.println(("error while retrieving update configuration files " + e.getMessage()));
+        }
+    }
+    public static String  getValueWithJs(String elementId){
+        JavascriptExecutor js=(JavascriptExecutor)Driver.getDriver();
+        String value=js.executeScript("return document.getElementById('"+elementId+"').value").toString();
+        return value;
+    }
+    public static void selectObjectMenu(WebElement element){
+        Select select=new Select(element);
+        List<WebElement> colors=select.getOptions();
+        colors.stream().forEach(t->t.click());
+        colors.stream().forEach(t-> Assert.assertTrue(t.isSelected()));
+        colors.stream().forEach(t-> System.out.println(t.getText()));
     }
 
 }
