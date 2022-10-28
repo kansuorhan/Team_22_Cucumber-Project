@@ -21,6 +21,6 @@ Feature: US010 Shipping urun renk ve boyut secimi testi
 
   Then Acilan pencerede urunun rengi secilebilmeli birden fazla
 
-      Scenario: TC02 Kullanici urunun boyutunu secebilmeli
+    #  Scenario: TC02 Kullanici urunun boyutunu secebilmeli
 
-  And Acilan pencerede urunun boyutu secilebilmeli birden fazla
+  #And Acilan pencerede urunun boyutu secilebilmeli birden fazla
