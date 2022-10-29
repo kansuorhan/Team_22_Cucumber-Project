@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="43.223">
+    <testcase classname="US010 Shipping urun renk ve boyut secimi testi" name="TC01 Kullanici urune birden fazla renk secebilmeli" time="43.017">
+        <system-out><![CDATA[Given Belirtilen URL'e gidilir..............................................passed
+Then Sing In butonuna tiklanir..............................................passed
+And E-mail ve password girisi yapmak icin textbox'larin acildigi dogrulanir.passed
+And Acilan pencerede gecerli e-mail ve sifre girildikten sonra Sign In butonuna tiklanir.passed
+And Basariyla giris yapildigi dogrulanir....................................passed
+And Sayfanin en altinda bulunan My Account'a tiklanir.......................passed
+And Acilan sayfada Store Manager secenegine tiklanir........................passed
+And Store Manager penceresindeyken Products sekmesine tiklanir..............passed
+And Sag ust kosede bulunan Add New butonuna tiklanir........................passed
+And Acilan sayfanin Add Product sayfasi oldugu dogrulanir...................passed
+And Acilan sayfada sol altta bulunan listede Shipping kismi tiklanir........passed
+Then Acilan pencerede urunun rengi secilebilmeli birden fazla...............passed
+]]></system-out>
+    </testcase>
+</testsuite>
