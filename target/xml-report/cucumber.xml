@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="43.223">
-    <testcase classname="US010 Shipping urun renk ve boyut secimi testi" name="TC01 Kullanici urune birden fazla renk secebilmeli" time="43.017">
-        <system-out><![CDATA[Given Belirtilen URL'e gidilir..............................................passed
-Then Sing In butonuna tiklanir..............................................passed
-And E-mail ve password girisi yapmak icin textbox'larin acildigi dogrulanir.passed
-And Acilan pencerede gecerli e-mail ve sifre girildikten sonra Sign In butonuna tiklanir.passed
-And Basariyla giris yapildigi dogrulanir....................................passed
-And Sayfanin en altinda bulunan My Account'a tiklanir.......................passed
-And Acilan sayfada Store Manager secenegine tiklanir........................passed
-And Store Manager penceresindeyken Products sekmesine tiklanir..............passed
-And Sag ust kosede bulunan Add New butonuna tiklanir........................passed
-And Acilan sayfanin Add Product sayfasi oldugu dogrulanir...................passed
-And Acilan sayfada sol altta bulunan listede Shipping kismi tiklanir........passed
-Then Acilan pencerede urunun rengi secilebilmeli birden fazla...............passed
-]]></system-out>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="77.437">
+    <testcase classname="US03 Vendor olarak, order verebilmeliyim ve orderlarimi sepette görebilmeliyim" name="TC_002 Sepete urun eklenebilmeli" time="76.949">
+        <failure message="Index 7 out of bounds for length 6" type="java.lang.IndexOutOfBoundsException"><![CDATA[Given Belirtilen URL'e gidilir..............................................passed
+Then Sign in  tiklanir......................................................passed
+Then Username or email address box'a gecerli email gonderilir...............passed
+Then passwords box'a gecerli password gonderilir............................passed
+Then sign in submit buttonuna tiklanir......................................passed
+Then Sign Out buttonuna tiklanir............................................passed
+Then Orders'a tikladiktan sonra acilan sayfada sepete rastgele 5 urun eklenir.failed
+And Sepete eklenen urun sayisi teyit edilir.................................skipped
+And Sayfayi kapatir.........................................................skipped
+
+StackTrace:
+java.lang.IndexOutOfBoundsException: Index 7 out of bounds for length 6
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:359)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at stepDefinitions.YahyaDefinition.ordersATikladiktanSonraAcilanSayfadaSepeteRastgeleUrunEklenir(YahyaDefinition.java:77)
+	at ✽.Orders'a tikladiktan sonra acilan sayfada sepete rastgele 5 urun eklenir(file:///C:/Users/Yakup/IdeaProjects/Team_22_Cucumber-Project/src/test/resources/features/US03.feature:23)
+]]></failure>
     </testcase>
 </testsuite>
