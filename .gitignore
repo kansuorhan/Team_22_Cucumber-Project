@@ -3,3 +3,4 @@
 /.idea/workspace.xml
 /target/
 configuration.properties
+src/test/java/runners/Runner.java
