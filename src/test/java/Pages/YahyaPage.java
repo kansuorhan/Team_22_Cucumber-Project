@@ -42,6 +42,10 @@ public class YahyaPage {
 
     @FindBy (xpath = "//li[text()='Shop']")
     public WebElement ShopText;
+    /*
+    yorum
+
+     */
 
     @FindBy(xpath = "(//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart'])")
     public  List<WebElement> liste;
