@@ -115,6 +115,12 @@ public class TarikDefinition {
         Assert.assertTrue(tarikObje.yorumIcerigiText.isDisplayed());
     }
 
+    @Then("Rating sekmesi altinda puanlamanin Dated sekmesi altinda da tarihin goruntulendigi dogrulanir")
+    public void ratingSekmesiAltindaPuanlamaninDatedSekmesiAltindaDaTarihinGoruntulendigiDogrulanir() {
+        Assert.assertTrue(tarikObje.ratingText.isDisplayed());
+        Assert.assertTrue(tarikObje.datedText.isDisplayed());
+    }
+
     @And("store manager penceresindeyken reports sekmesine tiklanir")
     public void storeManagerPenceresindeykenReportsSekmesineTiklanir() {
         jse.executeScript("arguments[0].scrollIntoView(true);", tarikObje.reportsLink);
@@ -167,4 +173,6 @@ public class TarikDefinition {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         Assert.assertTrue(tarikObje.rapor.isDisplayed());
     }
+
+
 }
