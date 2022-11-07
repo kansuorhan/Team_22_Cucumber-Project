@@ -15,3 +15,6 @@ Feature: Store manager olarak urunlerin incelenebilmesi testi
 
   Scenario: TC_001 Kullanici bilgisi, yazmıs oldugu comment
     Then author ve comment sekmelerinin altinda kullanici bilgisinin ve yorum iceriginin goruntulendigi dogrulanir
+
+    Scenario: TC_002 Verdigi rate ve comment tarihi tanımlanmalı
+      Then Rating sekmesi altinda puanlamanin Dated sekmesi altinda da tarihin goruntulendigi dogrulanir

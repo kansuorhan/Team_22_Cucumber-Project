@@ -1,7 +1,9 @@
 # Default ignored files
 /shelf/
 /.idea/workspace.xml
-/target/
-/target/
+target
+src/test/java/runners/Runner.java
+Runner.java
+configuration.properties
 
 
