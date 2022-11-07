@@ -16,6 +16,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -269,6 +271,31 @@ public class ReusableMethods {
         colors.stream().forEach(t-> Assert.assertTrue(t.isSelected()));
         colors.stream().forEach(t-> System.out.println(t.getText()));
     }
+
+
+    //====== JS Scroll Click ====//
+    public static void jsScrollClick(WebElement webElement) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        try {
+            webElement.click();
+        } catch (Exception e) {
+            js.executeScript("arguments[0].scrollIntoView(true);", webElement);
+            js.executeScript("arguments[0].click()", webElement);
+            waitFor(1);
+        }
+    }
+
+
+    //====== JS Scroll ====//
+    public static void jsScroll(WebElement webElement) {
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", webElement);
+    }
+
+
+
+
 
 }
 

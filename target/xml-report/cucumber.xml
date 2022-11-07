@@ -1,18 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="43.223">
-    <testcase classname="US010 Shipping urun renk ve boyut secimi testi" name="TC01 Kullanici urune birden fazla renk secebilmeli" time="43.017">
-        <system-out><![CDATA[Given Belirtilen URL'e gidilir..............................................passed
-Then Sing In butonuna tiklanir..............................................passed
-And E-mail ve password girisi yapmak icin textbox'larin acildigi dogrulanir.passed
-And Acilan pencerede gecerli e-mail ve sifre girildikten sonra Sign In butonuna tiklanir.passed
-And Basariyla giris yapildigi dogrulanir....................................passed
-And Sayfanin en altinda bulunan My Account'a tiklanir.......................passed
-And Acilan sayfada Store Manager secenegine tiklanir........................passed
-And Store Manager penceresindeyken Products sekmesine tiklanir..............passed
-And Sag ust kosede bulunan Add New butonuna tiklanir........................passed
-And Acilan sayfanin Add Product sayfasi oldugu dogrulanir...................passed
-And Acilan sayfada sol altta bulunan listede Shipping kismi tiklanir........passed
-Then Acilan pencerede urunun rengi secilebilmeli birden fazla...............passed
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="50.787">
+    <testcase classname="(US_013 defaming), Restrictions yapilabilmeli / ürüne kısıtlamalar getirilebilmeli" name="Minimum spend / en az alma miktari girilmeliyim" time="42.9">
+        <system-out><![CDATA[And Vendor "projeUrl" sayfasina gider.......................................passed
+And Vendor olarak login yapar...............................................passed
+And Vendor My Account butonuna tiklar.......................................passed
+And Vendor Store Manager butonuna tiklar....................................passed
+And Vendor Coupons butonuna tiklar..........................................passed
+And Vendor Add New butonuna tiklar..........................................passed
+And Vendor Add Coupon sayfasinda............................................passed
+And Vendor US_013 deki TC adimlarini tamamlar...............................passed
+Then Vendor Minimum Spend blogunun gorunur oldugunu test eder...............passed
+And Vendor Minimum Spend bloguna bir deger girer............................passed
 ]]></system-out>
+    </testcase>
+    <testcase classname="(US_013 defaming), Restrictions yapilabilmeli / ürüne kısıtlamalar getirilebilmeli" name="Maximum spend / maksimum alma miktarı girebilmeliyim" time="0.224">
+        <system-out><![CDATA[Then Vendor Maximum Spend blogunun gorunur oldugunu test eder...............passed
+And Vendor Maximum Spend bloguna bir deger girer............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="(US_013 defaming), Restrictions yapilabilmeli / ürüne kısıtlamalar getirilebilmeli" name="Individual use only / kisisel kullanım sadece secenegini tiklayabilmeliyim" time="0.378">
+        <system-out><![CDATA[Then Vendor Individual use only checkbox kutusunun gorunur oldugunu test eder.passed
+And Vendor  Individual use only checkbox kutusu tiklar......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="(US_013 defaming), Restrictions yapilabilmeli / ürüne kısıtlamalar getirilebilmeli" name="Exclude sale items / bazi satis ürünleri disinda tutabilmeliyim" time="0.297">
+        <system-out><![CDATA[Then Vendor Exclude sale items checkbox kutusunun gorunur oldugunu test eder.passed
+And Vendor  Exclude sale items checkbox kutusu tiklar.......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="(US_013 defaming), Restrictions yapilabilmeli / ürüne kısıtlamalar getirilebilmeli" name="Exclude categories / bazi kategorileri disinda tut" time="6.305">
+        <failure message="Expected condition failed: waiting for visibility of [[EdgeDriver: msedge on WINDOWS (bc1d1a593f683c029a5dba36c9aae8ba)] -&gt; xpath: //*[contains(text(), 'Coupon Successfully Published')]] (tried for 5 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.1.3', revision: '7b1ebf28ef'&#10;System info: host: 'LAPTOP-NU2K889G', ip: '192.168.1.9', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1.1'&#10;Driver info: org.openqa.selenium.edge.EdgeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 107.0.1418.35, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:51539}, msedge: {msedgedriverVersion: 107.0.1418.35 (806ca5c53c4f..., userDataDir: C:\Users\ZELIHA~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51539/devtoo..., se:cdpVersion: 107.0.1418.35, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: bc1d1a593f683c029a5dba36c9aae8ba" type="org.openqa.selenium.TimeoutException"><![CDATA[Then Vendor Exclude categories acilir menusunun gorunurlugunu test eder.....passed
+And Vendor Exclude categories acilir menuden secim yapar....................passed
+And Vendor tum bilgilerin dolduruldugunu kontrol eder.......................passed
+And Vendor Submit butonunun gorunur oldugunu test eder......................passed
+And Vendor Submit butonuna tiklar...........................................passed
+And Vendor Coupon Successfully Published. yazisinin cıktigini dogrular......failed
+And Vendor Draft butonunun gorunur oldugunu dogrular........................skipped
+And Vendor Draft butonuna tiklar............................................skipped
+And Vendor Coupon Successfully Saved. yazisinin gorunur oldugunu dogrular...skipped
+And Sayfayi kapatir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[EdgeDriver: msedge on WINDOWS (bc1d1a593f683c029a5dba36c9aae8ba)] -> xpath: //*[contains(text(), 'Coupon Successfully Published')]] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'LAPTOP-NU2K889G', ip: '192.168.1.9', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 107.0.1418.35, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:51539}, msedge: {msedgedriverVersion: 107.0.1418.35 (806ca5c53c4f..., userDataDir: C:\Users\ZELIHA~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51539/devtoo..., se:cdpVersion: 107.0.1418.35, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: bc1d1a593f683c029a5dba36c9aae8ba
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at utilities.ReusableMethods.waitForVisibility(ReusableMethods.java:103)
+	at stepDefinitions.US013_StepDefinition.vendorCouponSuccessfullyPublishedYazisininCiktiginiDogrular(US013_StepDefinition.java:181)
+	at ✽.Vendor Coupon Successfully Published. yazisinin cıktigini dogrular(file:///C:/Users/Zeliha%20Öznük/Desktop/Team_22_Cucumber-Project/src/test/resources/features/US_014.feature:42)
+]]></failure>
     </testcase>
 </testsuite>
