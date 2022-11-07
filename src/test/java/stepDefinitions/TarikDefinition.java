@@ -114,4 +114,65 @@ public class TarikDefinition {
         Assert.assertTrue(tarikObje.kullaniciBilgisiText.isDisplayed());
         Assert.assertTrue(tarikObje.yorumIcerigiText.isDisplayed());
     }
+
+    @Then("Rating sekmesi altinda puanlamanin Dated sekmesi altinda da tarihin goruntulendigi dogrulanir")
+    public void ratingSekmesiAltindaPuanlamaninDatedSekmesiAltindaDaTarihinGoruntulendigiDogrulanir() {
+        Assert.assertTrue(tarikObje.ratingText.isDisplayed());
+        Assert.assertTrue(tarikObje.datedText.isDisplayed());
+    }
+
+    @And("store manager penceresindeyken reports sekmesine tiklanir")
+    public void storeManagerPenceresindeykenReportsSekmesineTiklanir() {
+        jse.executeScript("arguments[0].scrollIntoView(true);", tarikObje.reportsLink);
+        jse.executeScript("arguments[0].click();", tarikObje.reportsLink);
+    }
+
+    @Then("Year sekmesine tiklanir ve ilgili raporun gorundugu dogrulanir")
+    public void yearSekmesineTiklanirVeIlgiliRaporunGorunduguDogrulanir() {
+        tarikObje.yearLink.click();
+        Assert.assertTrue(tarikObje.rapor.isDisplayed());
+    }
+
+    @Then("Last Month sekmesine tiklanir ve ilgili raporun gorundugu dogrulanir")
+    public void lastMonthSekmesineTiklanirVeIlgiliRaporunGorunduguDogrulanir() {
+        tarikObje.lastMonthLink.click();
+        Assert.assertTrue(tarikObje.rapor.isDisplayed());
+    }
+
+    @Then("This Month sekmesine tiklanir ve ilgili raporun gorundugu dogrulanir")
+    public void thisMonthSekmesineTiklanirVeIlgiliRaporunGorunduguDogrulanir() {
+        tarikObje.thisMonthLink.click();
+        Assert.assertTrue(tarikObje.rapor.isDisplayed());
+    }
+
+    @Then("Last Seven Days sekmesine tiklanir ve ilgili raporun gorundugu dogrulanir")
+    public void lastSevenDaysSekmesineTiklanirVeIlgiliRaporunGorunduguDogrulanir() {
+        tarikObje.last7DaysLink.click();
+        Assert.assertTrue(tarikObje.rapor.isDisplayed());
+    }
+
+    @Then("Custom kutucugundan ozel bir tarih araligi secilebildigi dogrulanir")
+    public void customKutucugundanOzelBirTarihAraligiSecilebildigiDogrulanir() {
+        tarikObje.customBox.click();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        tarikObje.gunler.get(15).click();
+        tarikObje.gunler.get(25).click();
+        tarikObje.customBox.click();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Assert.assertTrue(tarikObje.seciliGunlerText.isDisplayed());
+    }
+
+    @Then("Secilen tarih araliginin raporunun goruntulendigi dogrulanir")
+    public void secilenTarihAraligininRaporununGoruntulendigiDogrulanir() {
+        tarikObje.customBox.click();
+        wait.until(ExpectedConditions.visibilityOf(tarikObje.takvim));
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        tarikObje.gunler.get(15).click();
+        tarikObje.gunler.get(25).click();
+        tarikObje.customBox.click();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Assert.assertTrue(tarikObje.rapor.isDisplayed());
+    }
+
+
 }

@@ -2,6 +2,10 @@
 /shelf/
 /.idea/workspace.xml
 /target/
-/target/
 /TestRunnerZeliha/
+target
+src/test/java/runners/Runner.java
+Runner.java
+configuration.properties
+
 
