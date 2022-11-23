@@ -33,3 +33,4 @@ Feature: US015 TC001 - 002 - 003
     When Submit butonuna basilir
     And Submit oldugu test edilir
     And Sayfa kapatilir
+
